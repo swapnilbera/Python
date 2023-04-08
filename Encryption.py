@@ -30,3 +30,4 @@ else:
     else:
         str2= msg[3:len(msg)-4]
         print(msg[len(msg)-4]+str2)
+     
