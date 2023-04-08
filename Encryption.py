@@ -17,17 +17,19 @@ import random
 b = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 choice=int(input("Enter 1 for code and 2 for decode: "))
-msg=input("Enter Your Message: ")
 if choice==1:
+     msg=input("Enter your mesaage: ")
      if len(msg)<3:
          print(msg[::-1])
      else:
          str=msg[1:len(msg)]
          print(random.choice(b)+random.choice(b)+random.choice(b)+str+msg[0]+random.choice(b)+random.choice(b)+random.choice(b))
-else:
+elif choice==2:
+    msg=input("Enter Your message: ")
     if len(msg) < 3:
         print(msg[::-1])
     else:
         str2= msg[3:len(msg)-4]
         print(msg[len(msg)-4]+str2)
-     
+else:
+    raise ValueError("Please Enter value 1 or 2...")
