@@ -1,0 +1,14 @@
+import requests
+import json
+import os
+while(1):
+    city=input("Enter the name of the city: ")
+    if (city=="null"):
+        break
+    url=f"https://api.weatherapi.com/v1/current.json?key=0e5ffefe0ed24483806184127231306&q={city}"
+    r=requests.get(url);
+    wdic=json.loads(r.text)
+    txt=wdic["current"]['temp_c']
+    print(wdic["current"]['temp_c'] ,"°C")
+    cmd = f"Powershell Add-Type -AssemblyName System.Speech; (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('{txt}degree centigrade')"
+    os.system(cmd)
