@@ -1,0 +1,10 @@
+# This program is for windows os
+import os
+while(1):
+    txt = (input("Enter anything to pronounce it: "))
+    if txt == "quit please":
+        cmd = f"Powershell Add-Type -AssemblyName System.Speech; (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('I am quitting')"
+        os.system(cmd)
+        break
+    cmd = f"Powershell Add-Type -AssemblyName System.Speech; (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('{txt}')"
+    os.system(cmd)
